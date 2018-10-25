@@ -18,7 +18,7 @@ app.use(helmet());
 
 // Set up mongoose connection
 var mongoose = require('mongoose');
-var dev_db_url = 'mongodb://user123:user123@ds237832.mlab.com:37832/local-library-db'
+var dev_db_url = process.env.DATABASE_URL 
 var mongoDB = process.env.MONGODB_URI || dev_db_url;
 
 mongoose.connect(mongoDB);
